@@ -21,7 +21,7 @@ while True:
             if os.path.isfile(f'result/{name}.wav'):
                 b += 1
             else:
-                subprocess.run(f'wget -O result/{name}.mp3 "https://www.google.com/speech-api/v1/synthesize?lang=ja-jp&speed=0.4&text={a[b]}"')
+                subprocess.run(f'curl -o result/{name}.mp3 "https://www.google.com/speech-api/v1/synthesize?lang=ja-jp&speed=0.4&text={a[b]}"')
                 sound = pydub.AudioSegment.from_mp3(f"result/{name}.mp3")
                 sound.export(f"result/{name}.wav", format="wav")
                 os.remove(f'result/{name}.mp3')

@@ -17,11 +17,12 @@ while True: #루프 시작
             os.mkdir('result') # result 폴더 생성
         try: #오류 체크
             time.sleep(0.5) # 0.5초 쉬기
-            name = translator.translate(a[b], dest="ja").pronunciation.lower() #a[b]의 발음을 찾아 lower로 소문자로 받아 name에 저장
+            lang = translator.detect(a[b]).lang #a[b]의 언어 찾기
+            name = translator.translate(a[b], dest=lang).pronunciation.lower() #a[b]의 발음을 찾아 lower로 소문자로 받아 name에 저장
             if os.path.isfile(f'result/{name}.wav'): #파일이 있으면
                 b += 1 #b만 1 더 더하고 넘김
             else: #아니면
-                subprocess.run(f'curl -o result/{name}.mp3 "https://www.google.com/speech-api/v1/synthesize?lang=ja-jp&speed=0.4&text={a[b]}"') #name에 저장되있는 문자열을 파일 이름으로 이용, a[b]의 발음을 다운
+                subprocess.run(f'curl -o result/{name}.mp3 "https://www.google.com/speech-api/v1/synthesize?lang={lang}&speed=0.4&text={a[b]}"') #name에 저장되있는 문자열을 파일 이름으로 이용, a[b]를 lang에 저장되있는 나라로 음성을 다운
                 sound = pydub.AudioSegment.from_mp3(f"result/{name}.mp3") #mp3를 가져옴
                 sound.export(f"result/{name}.wav", format="wav") #mp3 -> wav 변환 작업
                 os.remove(f'result/{name}.mp3') #작업이 다되면 mp3 삭제

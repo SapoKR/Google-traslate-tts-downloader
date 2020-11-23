@@ -1,11 +1,12 @@
 구글 번역기 TTS 다운로더
 ==============================
 
-###다운로더를 쓰는법.
+다운로더를 쓰는법.
 -------------------------
 - [README - KO](https://github.com/moole100/Google-traslate-tts-downloader/blob/main/README.md)
 - [README - EN](https://github.com/moole100/Google-traslate-tts-downloader/blob/main/README%20-%20EN.md)
 - [README - JP](https://github.com/moole100/Google-traslate-tts-downloader/blob/main/README%20-%20JP.md)
+
 ###릴리즈 된것을 쓰는 방법.
 >**[Release](https://github.com/moole100/Google-traslate-tts-downloader/releases)** 를 클릭하세요.
 ![Image](https://media.discordapp.net/attachments/699182482985058314/780007696069296158/unknown.png?width=1239&height=697)
@@ -19,6 +20,7 @@
 ![Image](https://cdn.discordapp.com/attachments/699182482985058314/780011009728315412/unknown.png)
 >프로그램이 끝나면 프로그램 경로/result 에 가면 자신이 입력한 텍스트가 다운되어 있습니다.
 ![Image](https://media.discordapp.net/attachments/699182482985058314/780023983247982612/unknown.png?width=786&height=698)
+
 ###직접 빌드,수정 하는법
 > 이후 지원
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

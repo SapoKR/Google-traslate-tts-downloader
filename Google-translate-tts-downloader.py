@@ -3,8 +3,18 @@ import subprocess #음성 다운로드 역할(os로 하면 안됨)
 from googletrans import Translator #구글 번역기
 import time #시간 기다리는거
 import pydub #파일 변환
-s = input('>') #문자열 받기
-a = list(s) #받은 발음은 1글자씩 쪼갬
+import copy
+Temp = "" # Temp를 ""으로 지정
+while True:
+    s = input('>') #문자열 받기
+    if s == '':
+        if Temp == '':
+            print("입력된 텍스트가 없습니다. 다시 입력하여 주세요.")
+        else:
+            break
+    else:
+        Temp = Temp + copy.copy(s)
+a = list(Temp) #받은 발음은 1글자씩 쪼갬
 b = 0 #파이썬은 list가 0부터 시작하기 떄문에 0부터 시작
 translator = Translator() # 번역기 불러오기
 locate = os.path.join(os.getcwd(), "result") #경로 불러오기
@@ -12,7 +22,7 @@ while True: #루프 시작
     if ' ' in a: #만약 공백이 있으면
         a.remove(' ') # 삭제
     else: #없으면
-        if os.path.isfile(): # 이상한 파일이 있으면
+        if os.path.isfile(os.path.join(os.getcwd(), "result",".mp3")): # 이상한 파일이 있으면
             os.remove(os.path.join(os.getcwd(), "result",".mp3")) #이상한 파일 삭제
         if not os.path.isdir(locate): #result라는 폴더가 없으면
             os.mkdir(locate) # result 폴더 생성
@@ -23,7 +33,7 @@ while True: #루프 시작
             if os.path.isfile(os.path.join(os.getcwd(), "result",f"{name}.wav")): #파일이 있으면
                 b += 1 #b만 1 더 더하고 넘김
             else: #아니면
-                subprocess.run(f'curl -o {os.path.join(os.getcwd(), "result",f"{name}.mp3")} f"https://www.google.com/speech-api/v1/synthesize?lang={lang}&speed=0.4&text={a[b]}"') #name에 저장되있는 문자열을 파일 이름으로 이용, a[b]를 lang에 저장되있는 나라로 음성을 다운
+                subprocess.run(f'curl -o {os.path.join(os.getcwd(), "result",f"{name}.mp3")} ' + f'"https://www.google.com/speech-api/v1/synthesize?lang={lang}&speed=0.4&text={a[b]}"') #name에 저장되있는 문자열을 파일 이름으로 이용, a[b]를 lang에 저장되있는 나라로 음성을 다운
                 sound = pydub.AudioSegment.from_mp3(os.path.join(os.getcwd(), "result",f"{name}.mp3")) #mp3를 가져옴
                 sound.export(os.path.join(os.getcwd(), "result", f"{name}.wav"), format="wav") #mp3 -> wav 변환 작업
                 os.remove(os.path.join(os.getcwd(), "result",f"{name}.mp3")) #작업이 다되면 mp3 삭제

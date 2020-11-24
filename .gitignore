@@ -3,4 +3,5 @@ __pycache__
 .pytest_cache
 .idea
 build/
+Google-translate-tts-downloader.spec
 dist/

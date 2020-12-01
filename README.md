@@ -7,6 +7,9 @@
 - [README - EN](https://github.com/moole100/Google-traslate-tts-downloader/blob/main/README%20-%20EN.md)
 - [README - JP](https://github.com/moole100/Google-traslate-tts-downloader/blob/main/README%20-%20JP.md)
 
+ffmpeg 설치를 먼저 해주서야 합니다!
+- [ffmpeg installation guide.](https://github.com/moole100/Google-traslate-tts-downloader/blob/main/ffmpeg%20installation%20guide%20-%20KO.md)
+
 릴리즈 된것을 쓰는 방법.
 >**[Release](https://github.com/moole100/Google-traslate-tts-downloader/releases)** 를 클릭하세요.
 ![Image](https://media.discordapp.net/attachments/699182482985058314/780007696069296158/unknown.png?width=1239&height=697)

@@ -1,6 +1,6 @@
-グーグル翻訳機TTSダウンローダー
+ffmpegインストールガイド
 ==============================
-ダウンローダーの使い方
+他言語のガイド
 -------------------------
 - [ffmpeg installation guide - KO](https://github.com/moole100/Google-traslate-tts-downloader/blob/main/ffmpeg%20installation%20guide%20-%20KO.md)
 - [ffmpeg installation guide - EN](https://github.com/moole100/Google-traslate-tts-downloader/blob/main/ffmpeg%20installation%20guide%20-%20EN.md)
